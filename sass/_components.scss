@@ -13,6 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width:$bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--color-grey-light-2);
+    }
+
     &__input{
         font-family: inherit;
         font-size: inherit;
@@ -123,12 +130,22 @@
     font-size: 1.4rem;
     list-style: none;
     margin-top: 3.5rem;
+    @media only screen and (max-width:$bp-largest) {
+        display: flex;
+        margin: 0;
+    }
 
     &__item{
         position: relative;
+        @media only screen and (max-width:$bp-largest) {
+            flex: 1;
+        }
 
         &:not(:last-child){
             margin-bottom: .5rem;
+            @media only screen and (max-width:$bp-largest) {
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -166,6 +183,16 @@
         align-items: center;
         z-index: 10;
         position: relative;
+
+        @media only screen and (max-width:$bp-largest) {
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        @media only screen and (max-width:$bp-small) {
+            flex-direction: column;
+            padding: 1rem .5rem;
+        }
     }
 
     
@@ -175,6 +202,12 @@
         width: 1.75rem;
         margin-right: 2rem;
         fill: currentColor;  // color of parent element 
+
+        @media only screen and (max-width:$bp-small) {
+           margin: 0;
+           width: 1.5rem;
+           margin-bottom: .5rem;
+        }
     }
 }
 
@@ -186,6 +219,10 @@
     text-align: center;
     padding: 2.5rem;
     color: var(--color-grey-light-4);
+
+    @media only screen and (max-width:$bp-largest) {
+        display: none;
+    }
 }
 
 
@@ -213,6 +250,11 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width:$bp-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars{
@@ -246,17 +288,27 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        @media only screen and (max-width:$bp-small) {
+            padding: 0 1.5rem;
+        }
     }
 
     &__rating-average{
         font-size: 2.25rem;
         font-weight: 300;
         margin-bottom: -3px;
+        @media only screen and (max-width:$bp-small) {
+            font-size: 1.8rem;
+        }
     }
 
     &__rating-count{
         font-size: .8rem;
         text-transform: uppercase;
+
+        @media only screen and (max-width:$bp-small) {
+            font-size: .5rem;
+        }
     }
 }
 
@@ -380,6 +432,10 @@
         margin-right: auto;
     }
 
+    &__friends{
+        display: flex;
+    }
+
     &__photo{
         box-sizing: content-box;
         height: 4rem;
@@ -388,7 +444,7 @@
         border: 3px solid white;
 
         &:not(:last-child){
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
     }
 }
@@ -403,6 +459,11 @@
     margin-bottom: 3.5rem;
     overflow: hidden;
     position: relative;
+
+    @media only screen and (max-width:$bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
    
     &__text{
         z-index: 100;
@@ -464,6 +525,10 @@
 .cta{
     padding: 3.5rem 0;
     text-align: center;
+
+    @media only screen and (max-width:$bp-medium) {
+       padding: 2.5rem 0;
+    }
 
     &__book-now{
         text-transform: uppercase;
